@@ -30,19 +30,13 @@ const network = clusterApiUrl('devnet');
 const opts = {
   preflightCommitment: "processed"
 }
-// Constants
-const TWITTER_HANDLE = '_buildspace';
-const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
-const TEST_GIFS = [
-  'https://media.giphy.com/media/xUA7bguaF6hjMnSRxK/giphy.gif',
-  'https://media.giphy.com/media/TgF6KPET5RrmAI1fZo/giphy.gif',
-  'https://media.giphy.com/media/u2Zl6MxdEsHp6/giphy.gif'
-]
+
 const App = () => {
 
   const [walletAddress, setWalletAddress] = useState(null);
   const [inputValue, setInputValue] = useState('');
   const [gifList, setGifList] = useState([]);
+
 
   const checkIfWalletIsConnected = async () => {
     try {
@@ -105,7 +99,6 @@ const App = () => {
     setInputValue(value);
   };
 
-  
   const onUpVoteClicked =  async (lastVote) => {
     console.log("update", lastVote)
     try {
@@ -204,9 +197,9 @@ const App = () => {
                 <img src={item.gifLink} />
                 <figcaption >
                   <p>From: {item.userAddress.toString()}</p>
-                  Upvotes: {item.upVotes.toString()}
+                   ❤️ 's: {item.upVotes.toString()}
                 </figcaption>
-                <button onClick={() => onUpVoteClicked(item.gifLink)}>This is Awesome!</button>
+                <button onClick={() => onUpVoteClicked(item.gifLink)}>❤️ ➕➕</button>
               </div>
             ))}
           </div>
@@ -245,7 +238,7 @@ const App = () => {
       getGifList()
     }
   }, [walletAddress]);
-
+  
   return (
     <div className="App">
       <div className={walletAddress ? 'authed-container' : 'container'}>
@@ -257,15 +250,6 @@ const App = () => {
           {/* Add the condition to show this only if we don't have a wallet address */}
           {!walletAddress && renderNotConnectedContainer()}
           {walletAddress && renderConnectedContainer()}
-        </div>
-        <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
-          <a
-            className="footer-text"
-            href={TWITTER_LINK}
-            target="_blank"
-            rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
         </div>
       </div>
     </div>
