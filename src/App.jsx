@@ -241,6 +241,13 @@ const App = () => {
   
   return (
     <div className="App">
+    <div className="banner"> 
+      <p>
+        Built on <strong>Solana Devnet</strong> & requires <a href="https://phantom.app/">Phantom Wallet</a> to use. 
+      </p>
+
+    
+    </div>
       <div className={walletAddress ? 'authed-container' : 'container'}>
         <div className="header-container">
           <p className="header">🐓 Chicken Portal 🐓</p>

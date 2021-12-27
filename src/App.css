@@ -4,6 +4,9 @@
   overflow: scroll;
   text-align: center;
 }
+.banner{
+  background-color:#35aee2;
+}
 
 .container {
   height: 100%;
