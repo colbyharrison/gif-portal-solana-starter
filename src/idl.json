@@ -1,9 +1,9 @@
 {
   "version": "0.1.0",
-  "name": "myepicproject",
+  "name": "gifportaldapp",
   "instructions": [
     {
-      "name": "startStuffOff",
+      "name": "initialize",
       "accounts": [
         {
           "name": "baseAccount",
@@ -111,6 +111,6 @@
     }
   ],
   "metadata": {
-    "address": "5kyuwHESFKNRBhegMSXQCRptxQuaf529Gx1TfGKPNJ3d"
+    "address": "J47bu99JDY6GdnyQ6yZ7nz4uRePWPa99zpjQz2ubc9xt"
   }
 }
