@@ -105,7 +105,7 @@ const App = () => {
       const provider = getProvider();
       const program = new Program(idl, programID, provider);
 
-      await program.rpc.incrementUpVote(lastVote, {
+      await program.rpc.incrementUpVote(lastVote.toString(), {
         accounts: {
           baseAccount: baseAccount.publicKey,
           user: provider.wallet.publicKey,
@@ -199,7 +199,7 @@ const App = () => {
                   <p>From: {item.userAddress.toString()}</p>
                    ❤️ 's: {item.upVotes.toString()}
                 </figcaption>
-                <button onClick={() => onUpVoteClicked(item.gifLink)}>❤️ ➕➕</button>
+                <button onClick={() => onUpVoteClicked(item.id.toNumber())}>❤️ ➕➕</button>
               </div>
             ))}
           </div>
